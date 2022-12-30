@@ -53,7 +53,15 @@ export default {
                 this.formIsValid = false;
                 return;
             }
-            // send http request...
+            
+            if (this.mode === 'login') {
+                // ...
+            } else { // since the module isn't namespaced, we don't add it here on the next line below
+                this.$store.dispatch('signup', { 
+                    email: this.email,
+                    password: this.password
+                });  
+            }
         },
         switchAuthMode() {
             if(this.mode === 'login') {
