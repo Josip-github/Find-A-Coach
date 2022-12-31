@@ -75,8 +75,10 @@ export default {
                     if (this.mode === 'login') {
                         await this.$store.dispatch('login', actionPayload);
                     } else { // since the module isn't namespaced, we don't add it here on the next line below
-                            await this.$store.dispatch('signup', actionPayload);  
+                        await this.$store.dispatch('signup', actionPayload);  
                     }
+                    const redirectUrl = '/' + (this.$route.query.redirect || 'coaches');
+                    this.$router.replace(redirectUrl);
             } catch(err) {
                 this.error = err.message || 'Failed to authenticate, try later.';
             }
