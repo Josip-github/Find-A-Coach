@@ -64,4 +64,10 @@ h2 {
 .filter-option.active label {
   font-weight: bold;
 }
+
+#backend,
+#frontend,
+#career {
+  accent-color: #0D55DC;
+}
 </style>
